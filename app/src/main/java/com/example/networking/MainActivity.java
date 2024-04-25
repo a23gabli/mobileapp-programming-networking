@@ -52,6 +52,14 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         view.setAdapter(adapter);
 
         getJson();
+
+        for (Mountain mountain : mountainList) {
+            items.add(new RecyclerViewItem(mountain.name));
+        }
+        adapter.notifyDataSetChanged();
+
+
+
     }
 
     @Override
@@ -66,6 +74,8 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         new JsonTask(this).execute(JSON_URL);
         new JsonFile(this, this).execute(JSON_FILE);
     }
+
+
 
 
 }
