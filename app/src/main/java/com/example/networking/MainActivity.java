@@ -30,10 +30,6 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new JsonFile(this, this).execute(JSON_FILE);
-
-
-
         ArrayList<RecyclerViewItem> items = new ArrayList<>(Arrays.asList(
                 new RecyclerViewItem("Matterhorn"),
                 new RecyclerViewItem("Mont Blanc"),
