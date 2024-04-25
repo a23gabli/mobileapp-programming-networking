@@ -18,6 +18,19 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
 
         new JsonFile(this, this).execute(JSON_FILE);
 
+        ArrayList<RecyclerViewItem> items = new ArrayList<>(Arrays.asList(
+                new RecyclerViewItem("Matterhorn"),
+                new RecyclerViewItem("Mont Blanc"),
+                new RecyclerViewItem("Denali")
+        ));
+
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, items, new RecyclerViewAdapter.OnClickListener() {
+            @Override
+            public void onClick(RecyclerViewItem item) {
+                Toast.makeText(MainActivity.this, item.getTitle(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     @Override
